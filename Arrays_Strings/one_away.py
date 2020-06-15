@@ -39,35 +39,6 @@ def OneAway(s1, s2):
     return True
 
 
-                
-
-    for i in range(0, len(s1)):
-        if s1[i] != s2[i]:
-            # insert
-            if s2[i+1] == s1[i]:
-                edit_count += 1
-                insert = True
-            # delete
-            elif s1[i+1] == s2[i]:
-                edit_count +=1
-                delete = True
-            # replace
-            else:
-                edit_count +=1
-        elif insert:
-            if s2[i+1] != s1[i]:
-                return False
-        elif delete:
-            if s1[i+1] != s2[i]:
-                return false
-        if edit_count > 1:
-            return False
-        
-    if edit_count == 1 and string_diff > 1:
-        return False
-
-    return True
-
 
 
 
