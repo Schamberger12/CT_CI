@@ -1,6 +1,18 @@
+# Simple solution 
+# type in True or False for case sensitivity
+# can take in space-separated words("taco cat")
+
 import sys
 
-def palindrome_permutation(input):
+def palindrome_permutation(case_sensitive, palindrome):
+
+    input = ""
+
+    for i in palindrome:
+        input += i
+
+    if not case_sensitive:
+        input = input.lower()
 
     palin_dict = {}
 
@@ -24,7 +36,7 @@ def palindrome_permutation(input):
             
 
 def main():
-    print(palindrome_permutation(sys.argv[1]))
+    print(palindrome_permutation(bool(sys.argv[1]),sys.argv[2:]))
 
 
 
